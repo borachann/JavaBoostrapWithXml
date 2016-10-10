@@ -24,7 +24,7 @@ public class UserDAO {
 			public user mapRow(ResultSet rs, int rowNum) throws SQLException {
 				// TODO Auto-generated method stub
 				user User = new user();
-				User.setId(rs.getLong("id"));
+				User.setId(rs.getInt("id"));
 				User.setEmail(rs.getString("email"));
 				return User;
 			}
