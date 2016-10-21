@@ -1,4 +1,4 @@
-package configurations;
+package com.configurations;
 
 import javax.sql.DataSource;
 
@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@ComponentScan(basePackages={"controllers", "repositories", "Services"})
+@ComponentScan(basePackages="com")
 @EnableWebMvc
 public class ServletConfiguration extends WebMvcConfigurerAdapter{
 	@Bean

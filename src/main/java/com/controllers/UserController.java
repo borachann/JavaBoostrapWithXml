@@ -1,4 +1,4 @@
-package controllers;
+package com.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import entities.user;
-import repositories.UserDAO;
+import com.entities.user;
+import com.repositories.UserDAO;
 
 @Controller
 public class UserController {

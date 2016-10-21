@@ -1,4 +1,4 @@
-package controllers;
+package com.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,15 +11,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import Services.UserService;
-import Services.UserServiceInf;
-import entities.user;
+import com.Services.UserService;
+import com.entities.user;
+import com.repositories.UserDAO;
 
 @Controller
 public class RestController {
 	
 	@Autowired
-	UserServiceInf userService;
+	UserService userService;
+	
+	@Autowired
+	private UserDAO userDAO;
 
 	@RequestMapping(value="/rest", method= RequestMethod.GET)
 	@ResponseBody
@@ -55,8 +58,18 @@ public class RestController {
 	@RequestMapping(value="restUser", method= RequestMethod.GET)
 	public ResponseEntity<Map<String, Object>> RestUsercontroller(){
 		Map<String, Object> model = new HashMap<String, Object>();
+		//System.out.println("1");
 		model.put("Users", userService.listUser());
-		
+		//System.out.println("2");
+		return new ResponseEntity<Map<String, Object>> (model,HttpStatus.OK);
+	}
+
+	@RequestMapping(value="deleteUser", method= RequestMethod.GET)
+	public ResponseEntity<Map<String, Object>> deleteUser(){
+		Map<String, Object> model = new HashMap<String, Object>();
+	//	System.out.println("1");
+		model.put("Users", userDAO.deleteUser());
+	//	System.out.println("2");
 		return new ResponseEntity<Map<String, Object>> (model,HttpStatus.OK);
 	}
 }

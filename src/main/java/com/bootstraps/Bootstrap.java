@@ -1,4 +1,4 @@
-package bootstraps;
+package com.bootstraps;
 
 
 import javax.servlet.ServletContext;
@@ -8,7 +8,7 @@ import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import configurations.ServletConfiguration;
+import com.configurations.ServletConfiguration;
 
 public class Bootstrap implements WebApplicationInitializer{
 	@Override

@@ -1,10 +1,10 @@
-package repositories;
+package com.repositories;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
-import entities.user;
+import com.entities.user;
 
 public class HibernateUtil {
 	

@@ -1,10 +1,12 @@
-package Services;
+package com.Services;
 
 import java.util.List;
 
-import entities.user;
+import com.entities.user;
 
 
 public interface UserServiceInf {
 	public List<user> listUser();
+
+	public List<user> listUsers();
 }
